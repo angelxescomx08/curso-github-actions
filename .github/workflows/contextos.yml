@@ -1,0 +1,29 @@
+name: Aprendiendo contextos
+run-name: ¡Aprendiendo contextos con github actions!
+on:
+  push:
+    branches:
+      - main
+      - aprendiendo-github-actions
+
+#los env contienen variables que se pueden usar en diferentes contextos,
+#en caso de tener el mismo nombre github usará la variable más especifica
+#por ejemplo steps > jobs > workflow
+env:
+  nombre: Angel
+
+jobs:
+  imprimir-event-name:
+    runs-on: ubuntu-latest
+    name: Imprimiendo event name
+    steps:
+      - name: Imprimendo event name step
+        run: echo "El evento es => ${{github.event_name}}"
+  imprimir-env:
+    runs-on: ubuntu-latest
+    name: Imprimir env
+    env:
+      apellido: Hernandez
+    steps:
+      - name: Imprimiendo variables de env
+        run: echo "Hola ${{env.nombre}} ${{env.apellido}}"
