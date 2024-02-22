@@ -1,4 +1,5 @@
 name: Aprendiendo a usar triggers en github actions
+run-name: ¡Estoy aprendiendo triggers!
 on:
   push:
     branches:
