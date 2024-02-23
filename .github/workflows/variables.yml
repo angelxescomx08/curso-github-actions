@@ -1,0 +1,17 @@
+name: Aprendiendo variables de vars
+run-name: ¡Aprendiendo variables vars en github actions!
+
+on:
+  push:
+    branches:
+      - main
+      - aprendiendo-github-actions
+
+jobs:
+  usando-contexto-vars:
+    name: Usando el contexto vars que se crea en github
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Imprimiendo una variable del contexto vars
+        run: echo "Hola tu nombre es ${{vars.NOMBRE_COMPLETO}}"
